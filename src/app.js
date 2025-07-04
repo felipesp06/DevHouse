@@ -1,5 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import cors from 'cors';
 import path from 'path';
 import routes from './routes';
 
@@ -10,6 +11,7 @@ class App {
     mongoose. connect('mongodb+srv://devhouse:devhouse1@cluster0.ji0u4vt.mongodb.net/devhouse?retryWrites=true&w=majority&appName=Cluster0');
 
     this.midddlewares();
+    this.server.use(cors());
     this.routes();
 
   }
